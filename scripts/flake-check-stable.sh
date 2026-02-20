@@ -4,6 +4,12 @@ set -euo pipefail
 REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
 cd "$REPO_ROOT"
 
+# WSL and some constrained envs may not provide a writable /run/user/$UID.
+if [ -z "${XDG_RUNTIME_DIR:-}" ] || [ ! -w "${XDG_RUNTIME_DIR:-}" ]; then
+  export XDG_RUNTIME_DIR="/tmp/xdg-runtime-${UID}"
+  install -d -m 0700 "$XDG_RUNTIME_DIR"
+fi
+
 if [ "$#" -gt 0 ]; then
   FLAKE_PATH="$1"
   shift
