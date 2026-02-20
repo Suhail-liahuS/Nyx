@@ -34,6 +34,8 @@ bootstrap:
 env-ci:
     @echo 'Use this in constrained environments:'
     @echo '  NIX_REMOTE=daemon NIX_CONFIG="sandbox = false" just ci'
+    @echo 'Serialized flake checks with crash triage:'
+    @echo '  just flake-check-stable'
 
 [group('Maintenance')]
 upgrade *args:
@@ -54,6 +56,12 @@ default:
 [group('Nix')]
 check:
     set -euo pipefail; if [ -z "${XDG_RUNTIME_DIR:-}" ] || [ ! -w "${XDG_RUNTIME_DIR:-}" ]; then export XDG_RUNTIME_DIR="/tmp/xdg-runtime-${UID}"; install -d -m 0700 "$XDG_RUNTIME_DIR"; fi; nix flake check .
+
+[group('Nix')]
+flake-check-stable *args:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    scripts/flake-check-stable.sh . {{args}}
 
 [group('Nix')]
 build:

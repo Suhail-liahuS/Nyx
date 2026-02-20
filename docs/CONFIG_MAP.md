@@ -61,6 +61,7 @@ appendices.
     │   └── ssh/                        # Declarative SSH client/server templates
     ├── scripts/                        # Maintenance and test scripts
     │   ├── audit-repo.sh               # Contract + flake/build audit
+    │   ├── flake-check-stable.sh       # Serialized flake check + failure triage wrapper
     │   ├── test-configuration.sh       # Static sanity checks against configuration files
     │   └── test-optimizations.sh       # Runtime optimization checks (optional)
     └── modules/                        # Reusable modules (domain-driven)
@@ -139,6 +140,8 @@ appendices.
 - `docs/SECURITY_AND_RECOVERY.md`: security phases and recovery guidance.
 - `docs/REPRODUCIBILITY.md`: release provenance snippet.
 - `scripts/audit-locker.sh`: locker/PAM audit helper.
+- `scripts/flake-check-stable.sh`: crash-resistant `nix flake check` wrapper
+  with explicit tuning flags and likely-cause triage.
 - `scripts/usbguard-generate-policy.sh`: USBGuard allowlist generator.
 - `scripts/rsi-launcher.sh`: helper wrapper for RSI launcher or Lutris setup.
 - `templates/research/`: opt-in research flake with pinned devShell.
