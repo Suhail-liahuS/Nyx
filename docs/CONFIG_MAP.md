@@ -128,7 +128,7 @@ appendices.
 - `modules/programs/gaming.nix`: optional gaming stack based on install facts.
 - `modules/home/apps/ssh-identity.nix`: SSH identity wiring from install facts.
 - `modules/home/apps/trezor-agent.nix`: optional trezor-agent service.
-- `modules/home/apps/protonvpn.nix`: optional ProtonVPN GUI.
+- `configuration.nix`: system-level WireGuard tooling (`wireguard-tools`).
 - `modules/boot/uki.nix`: Bootspec with NyxOS UKI extension.
 - `profiles/`: system + ZRAM profiles (finite outputs).
 - `pkgs/latencyflex.nix`: LatencyFleX derivation and manifest.
