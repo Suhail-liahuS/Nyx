@@ -1,9 +1,9 @@
 
-# ❄️ NyxOS — Framework 13 AMD (AI 300 / Strix Point) • Niri on NixOS 25.11
+# ❄️ Nyx — Framework 13 AMD (AI 300 / Strix Point) • Niri on NixOS 25.11
 
 A declarative, modular, and opinionated **NixOS 25.11** configuration built for the **Framework 13 AMD (AI 300 / Strix Point)** laptop.
 
-NyxOS ships a **Desktop Router**: instantly switch between a modern **Noctalia** desktop and a retro-futuristic **Waybar (Aurora)** setup while keeping a *single*, unified backend for theming, keybinds, and shell tooling.
+Nyx ships a **Desktop Router**: instantly switch between a modern **Noctalia** desktop and a retro-futuristic **Waybar (Aurora)** setup while keeping a *single*, unified backend for theming, keybinds, and shell tooling.
 
 ---
 
@@ -41,7 +41,7 @@ This project is licensed under the Apache License 2.0.
 
 ## 🌗 Dual-profile system
 
-NyxOS provides two distinct desktop “personalities,” switchable in `home-ashy.nix`:
+Nyx provides two distinct desktop “personalities,” switchable in `home-ashy.nix`:
 
 | Feature        | **Noctalia profile**                 | **Waybar (Aurora) profile**        |
 |---------------|--------------------------------------|------------------------------------|
@@ -173,7 +173,7 @@ See `docs/HARDENING.md` for consolidated hardening details.
 
 ## 🗜️ System & LatencyFleX profiles
 
-NyxOS exposes **system profiles** (VM/sysctl/ZRAM/CPU governor) and **LatencyFleX** as flake arguments.
+Nyx exposes **system profiles** (VM/sysctl/ZRAM/CPU governor) and **LatencyFleX** as flake arguments.
 Profiles are selected via `--argstr systemProfile <name>`; LatencyFleX via `--arg latencyflexEnable <bool>`.
 Selection happens at flake evaluation time—no runtime toggling.
 
@@ -235,7 +235,7 @@ It trades a small amount of flash wear for avoiding OOM conditions. Avoid on slo
 
 ### ZRAM and `swappiness`
 
-NyxOS defaults to `vm.swappiness=10`, preferring RAM until pressure rises.
+Nyx defaults to `vm.swappiness=10`, preferring RAM until pressure rises.
 Each ZRAM profile sets appropriate swappiness and priority values automatically. Manual tuning is usually unnecessary.
 
 ---
@@ -388,7 +388,7 @@ Grouped roughly by purpose (not exhaustive).
 
 ## ⚡ Performance & monitoring
 
-NyxOS includes layered performance tuning across:
+Nyx includes layered performance tuning across:
 
 * boot + kernel parameters
 * memory (swappiness, cache pressure, dirty writeback)
